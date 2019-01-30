@@ -32,5 +32,11 @@ quip.apps.initialize({
                 rootRecord.set('src', data.location.replace('/embed', '/'));
             }
         });
+
+        // This is an ugly hack to make this embed clickable in publicly-shared
+        // Quip docs. Quip adds a 'read-only' class to the div, which makes it
+        // impossible to interact with the iframe when shared; this disables
+        // the pointer-events:none portion of that class.
+        rootNode.style.pointerEvents = 'auto';
     },
 });
