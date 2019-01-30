@@ -1,0 +1,17 @@
+{
+    "name": "cfiddle-quip-app",
+    "version": "0.0.1",
+    "description": "Cfiddle Quip App",
+    "license": "",
+    "scripts": {
+        "start": "NODE_ENV=development webpack-dev-server --https",
+        "build": "NODE_ENV=production webpack; create-quip-app pack ./app"
+    },
+    "author": "Ryan Eberhardt",
+    "devDependencies": {
+        "quip-apps-webpack-config": ">=0.0.39"
+    },
+    "dependencies": {
+        "handle-thing": "^2.0.0"
+    }
+}
