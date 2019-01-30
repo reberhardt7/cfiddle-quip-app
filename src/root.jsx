@@ -24,5 +24,13 @@ quip.apps.initialize({
         rootNode.innerHTML = '<iframe width="100%" height="'
             + FRAME_HEIGHT + 'px" frameborder="0" src="'
             + embedUrl + '"></iframe>';
+
+        window.addEventListener('message', function(e) {
+            const data = e.message || e.data;
+            console.log(data);
+            if (data && data.eventType == 'cfiddle-updated') {
+                rootRecord.set('src', data.location.replace('/embed', '/'));
+            }
+        });
     },
 });
